@@ -1,0 +1,23 @@
+def generate_fibonacci(n):
+    if n <= 0:
+        print("Please enter a positive integer.")
+        return
+    elif n == 1:
+        print("Fibonacci sequence (1 term):")
+        print("0")
+    elif n == 2:
+        print("Fibonacci sequence (2 terms):")
+        print("0, 1")
+    else:
+        print(f"Fibonacci sequence ({n} terms):")
+        fib = [0, 1]
+        while len(fib) < n:
+            fib.append(fib[-1] + fib[-2])
+        print(", ".join(map(str, fib)))
+
+# Example usage:
+try:
+    terms = int(input("Enter the number of terms: "))
+    generate_fibonacci(terms)
+except ValueError:
+    print("Invalid input. Please enter an integer.")
